@@ -9,7 +9,7 @@
 			"type": "cppdbg",
 			"request": "launch",
 			"program": "${workspaceFolder}/PmegreMe",
-			"args": ["5", "4", "3"],
+			"args": ["9", "5", "7", "3", "2", "6", "4", "0"],
 			"stopAtEntry": false,
 			"cwd": "${fileDirname}",
 			"environment": [],

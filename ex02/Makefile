@@ -10,7 +10,7 @@ SRC = main.cpp
 OBJ = $(addprefix $(OBJ_DIR)/, $(SRC:.cpp=.o))
 
 CXX = c++
-CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -g3
+CXXFLAGS = -Wall -Werror -Wextra -g3
 INC = -Iincludes
 
 SRC_DIR = srcs
