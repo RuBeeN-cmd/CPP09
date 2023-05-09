@@ -4,9 +4,9 @@ _GREEN="\033[0;32m"
 _YELLOW="\033[0;33m"
 _CYAN="\033[0;36m"
 
-NAME = PmegreMe
+NAME = PmergeMe
 
-SRC = main.cpp
+SRC = main.cpp PmergeMe.cpp
 OBJ = $(addprefix $(OBJ_DIR)/, $(SRC:.cpp=.o))
 
 CXX = c++
