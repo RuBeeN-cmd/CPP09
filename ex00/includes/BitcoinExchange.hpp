@@ -5,23 +5,36 @@
 #include <string>
 #include <fstream>
 #include <iostream>
-#include <exception>
 #include <sstream>
 #include <cstdlib>
-#include <algorithm>
+#include <iomanip>
+
+struct	Date {
+	unsigned int	year;
+	unsigned int	month;
+	unsigned int	day;
+
+	bool	operator<(const Date &date) const;
+};
 
 class BitcoinExchange
 {
 private:
-	std::map<std::string, double> _price;
-	BitcoinExchange();
+	std::map<Date, double> _price;
+
+	int	check_first_line(std::string &line, std::string model) const;
+	int	get_data(std::ifstream &fin, std::string *key, std::string *value, char delim) const;
+	double get_quantity(std::string &value) const;
+
 
 public:
-	BitcoinExchange(const std::string &path);
-	BitcoinExchange	&operator=(const BitcoinExchange &);
+	BitcoinExchange();
 	~BitcoinExchange();
+	BitcoinExchange(BitcoinExchange &);
+	BitcoinExchange	&operator=(const BitcoinExchange &);
 
-	void	treat_input(const std::string &path);
+	int	init_db(std::string	db_path);
+	int	treat_input(std::string path) const;
 };
 
 #endif
